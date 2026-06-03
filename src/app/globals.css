@@ -263,14 +263,6 @@ p { margin: 0; font-size: var(--text-base); line-height: var(--lh-normal); color
 /* Hero video — fills the right column area, blended into navy */
 .hero-video-wrap {
   position: absolute; inset: 0; z-index: 0; overflow: hidden;
-  -webkit-mask-image:
-    linear-gradient(to right, transparent 15%, rgba(0,0,0,0.5) 35%, rgba(0,0,0,0.8) 55%, rgba(0,0,0,0.6) 78%, transparent 95%),
-    linear-gradient(to bottom, transparent 2%, rgba(0,0,0,0.8) 20%, rgba(0,0,0,0.8) 75%, transparent 95%);
-  -webkit-mask-composite: destination-in;
-  mask-image:
-    linear-gradient(to right, transparent 15%, rgba(0,0,0,0.5) 35%, rgba(0,0,0,0.8) 55%, rgba(0,0,0,0.6) 78%, transparent 95%),
-    linear-gradient(to bottom, transparent 2%, rgba(0,0,0,0.8) 20%, rgba(0,0,0,0.8) 75%, transparent 95%);
-  mask-composite: intersect;
 }
 .hero-video {
   position: absolute;
@@ -278,6 +270,14 @@ p { margin: 0; font-size: var(--text-base); line-height: var(--lh-normal); color
   transform: translateY(-50%);
   width: 60%; height: auto;
   object-fit: contain;
+  -webkit-mask-image:
+    linear-gradient(to right, transparent 0%, rgba(0,0,0,0.4) 15%, rgba(0,0,0,0.8) 35%, rgba(0,0,0,0.8) 70%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.8) 15%, rgba(0,0,0,0.8) 80%, transparent 100%);
+  -webkit-mask-composite: destination-in;
+  mask-image:
+    linear-gradient(to right, transparent 0%, rgba(0,0,0,0.4) 15%, rgba(0,0,0,0.8) 35%, rgba(0,0,0,0.8) 70%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.8) 15%, rgba(0,0,0,0.8) 80%, transparent 100%);
+  mask-composite: intersect;
 }
 
 @media (max-width: 940px){
@@ -287,16 +287,16 @@ p { margin: 0; font-size: var(--text-base); line-height: var(--lh-normal); color
   .hero-video-wrap {
     position: relative; inset: auto;
     height: 340px; margin-bottom: 28px;
-    -webkit-mask-image:
-      radial-gradient(ellipse 85% 80% at 50% 45%, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 50%, transparent 72%);
-    mask-image:
-      radial-gradient(ellipse 85% 80% at 50% 45%, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 50%, transparent 72%);
   }
   .hero-video {
     position: absolute;
     right: auto; left: 50%; top: 50%;
     transform: translate(-50%, -50%);
     width: 85%; height: auto;
+    -webkit-mask-image:
+      radial-gradient(ellipse 80% 75% at 50% 48%, #000 30%, rgba(0,0,0,0.4) 55%, transparent 75%);
+    mask-image:
+      radial-gradient(ellipse 80% 75% at 50% 48%, #000 30%, rgba(0,0,0,0.4) 55%, transparent 75%);
   }
   .hp-content { max-width: 100%; text-align: center; }
   .hp-content .eyebrow { justify-content: center; }
@@ -709,16 +709,12 @@ p { margin: 0; font-size: var(--text-base); line-height: var(--lh-normal); color
 
 /* ---- Medium-small screens (≤760px) ---- */
 @media (max-width: 760px) {
-  /* Hero video: center below content */
-  .hero-video-wrap {
+  /* Hero video: tighter radial blend at smaller size */
+  .hero-video {
     -webkit-mask-image:
-      linear-gradient(to right, transparent 0%, rgba(0,0,0,0.7) 10%, rgba(0,0,0,0.7) 90%, transparent 100%),
-      linear-gradient(to bottom, transparent 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,1) 65%, transparent 90%);
-    -webkit-mask-composite: destination-in;
+      radial-gradient(ellipse 78% 72% at 50% 48%, #000 25%, rgba(0,0,0,0.4) 52%, transparent 72%);
     mask-image:
-      linear-gradient(to right, transparent 0%, rgba(0,0,0,0.7) 10%, rgba(0,0,0,0.7) 90%, transparent 100%),
-      linear-gradient(to bottom, transparent 0%, rgba(0,0,0,1) 20%, rgba(0,0,0,1) 65%, transparent 90%);
-    mask-composite: intersect;
+      radial-gradient(ellipse 78% 72% at 50% 48%, #000 25%, rgba(0,0,0,0.4) 52%, transparent 72%);
   }
 
   /* Services header: stack vertically */
