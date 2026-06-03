@@ -4,6 +4,7 @@ import { Nav } from "@/components/Nav";
 import { Hero } from "@/components/Hero";
 import { TrustBar } from "@/components/TrustBar";
 import { BeforeAfter } from "@/components/BeforeAfter";
+import { FoldShowcase } from "@/components/FoldShowcase";
 import { Benefits } from "@/components/Benefits";
 import { Gallery } from "@/components/Gallery";
 import { Services } from "@/components/Services";
@@ -24,6 +25,7 @@ export default function Home() {
         <Hero />
         <TrustBar />
         <BeforeAfter />
+        <FoldShowcase />
         <Benefits />
         <Gallery />
         <Services />
