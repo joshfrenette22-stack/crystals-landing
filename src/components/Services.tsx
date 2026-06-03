@@ -9,7 +9,7 @@ export function Services() {
   return (
     <section className="section" id="services" style={{ background: "var(--stone-100)" }}>
       <div className="container">
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", flexWrap: "wrap", gap: 20 }} className="reveal">
+        <div className="section-header reveal">
           <div style={{ maxWidth: 560 }}>
             <span className="eyebrow">What we do</span>
             <h2 className="section-title" style={{ marginTop: 14 }}>Five services, one trusted local team</h2>
