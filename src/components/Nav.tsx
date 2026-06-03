@@ -47,7 +47,11 @@ export function Nav() {
           {NAV_LINKS.map((l) => (
             <a key={l.href} href={l.href} onClick={() => setOpen(false)}>{l.label}</a>
           ))}
-          <a href={BRAND.phoneHref} onClick={() => setOpen(false)}>Call {BRAND.phone}</a>
+          <div style={{ paddingTop: 12 }}>
+            <a className="btn btn-primary btn-lg" href={BRAND.phoneHref} onClick={() => setOpen(false)} style={{ width: "100%", justifyContent: "center" }}>
+              <Phone size={18} />Call {BRAND.phone}
+            </a>
+          </div>
         </div>
       )}
     </>
