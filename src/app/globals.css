@@ -293,7 +293,7 @@ p { margin: 0; font-size: var(--text-base); line-height: var(--lh-normal); color
     position: absolute;
     right: auto; left: 50%; top: 50%;
     transform: translate(-50%, -50%);
-    width: auto; height: 520px;
+    width: 250vw; max-width: none; height: auto;
     -webkit-mask-image:
       radial-gradient(ellipse 80% 75% at 50% 48%, #000 30%, rgba(0,0,0,0.4) 55%, transparent 75%);
     mask-image:
