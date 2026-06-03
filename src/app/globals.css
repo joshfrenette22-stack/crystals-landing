@@ -286,13 +286,14 @@ p { margin: 0; font-size: var(--text-base); line-height: var(--lh-normal); color
   /* Make video flow in-document above text on mobile */
   .hero-video-wrap {
     position: relative; inset: auto;
-    height: 620px; margin-bottom: 28px;
+    height: 520px; margin-bottom: 28px;
+    overflow: visible;
   }
   .hero-video {
     position: absolute;
     right: auto; left: 50%; top: 50%;
     transform: translate(-50%, -50%);
-    width: 140%; max-width: none; height: auto;
+    width: auto; height: 520px;
     -webkit-mask-image:
       radial-gradient(ellipse 80% 75% at 50% 48%, #000 30%, rgba(0,0,0,0.4) 55%, transparent 75%);
     mask-image:
