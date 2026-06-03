@@ -3,6 +3,7 @@ import { useReveal } from "@/hooks/useReveal";
 import { Nav } from "@/components/Nav";
 import { Hero } from "@/components/Hero";
 import { TrustBar } from "@/components/TrustBar";
+import { BeforeAfter } from "@/components/BeforeAfter";
 import { Benefits } from "@/components/Benefits";
 import { Gallery } from "@/components/Gallery";
 import { Services } from "@/components/Services";
@@ -22,6 +23,7 @@ export default function Home() {
       <main>
         <Hero />
         <TrustBar />
+        <BeforeAfter />
         <Benefits />
         <Gallery />
         <Services />
