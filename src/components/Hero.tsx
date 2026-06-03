@@ -1,6 +1,4 @@
-import { ArrowRight, Truck, MapPin, Check } from "lucide-react";
-import Image from "next/image";
-import { WashingMachine, Phone as PhoneIcon } from "lucide-react";
+import { Truck, MapPin, Check } from "lucide-react";
 
 function Bubbles() {
   const specs: [number, number, string, string][] = [
@@ -20,39 +18,26 @@ function Bubbles() {
   );
 }
 
-function PhoneMock() {
-  return (
-    <div style={{
-      position: "absolute", left: -34, bottom: 30, width: 132, height: 262,
-      background: "var(--navy-900)", borderRadius: 26, border: "6px solid #1b2c3e",
-      boxShadow: "var(--shadow-xl)", padding: 12,
-      display: "flex", flexDirection: "column", alignItems: "center", gap: 8, zIndex: 4,
-    }}>
-      <div style={{ width: 38, height: 4, background: "rgba(255,255,255,0.2)", borderRadius: 3, marginTop: 2 }} />
-      <div style={{ marginTop: 10, color: "var(--gold-300)" }}><Truck size={26} /></div>
-      <div style={{ color: "rgba(255,255,255,0.85)", fontSize: 9.5, fontWeight: 700, textAlign: "center" as const, lineHeight: 1.3, padding: "0 6px" }}>Schedule a pickup</div>
-      <div style={{
-        width: 70, height: 70, background: "#fff", borderRadius: 8,
-        display: "grid", gridTemplateColumns: "repeat(5,1fr)", gridTemplateRows: "repeat(5,1fr)",
-        padding: 5, gap: 1.5, marginTop: 2,
-      }}>
-        {Array.from({ length: 25 }).map((_, i) => (
-          <div key={i} style={{
-            background: [0, 1, 2, 4, 5, 8, 10, 12, 14, 15, 18, 20, 21, 22, 24, 6, 16, 9, 13].includes(i) ? "var(--navy-900)" : "transparent",
-            borderRadius: 1,
-          }} />
-        ))}
-      </div>
-      <div style={{ marginTop: "auto", marginBottom: 6, fontSize: 8, color: "rgba(255,255,255,0.5)", fontWeight: 600 }}>HappyNest</div>
-    </div>
-  );
-}
-
 export function Hero() {
   return (
     <section className="hero-panel" id="top">
       <Bubbles />
-      <div className="container">
+
+      {/* Video background — right side, blended into navy */}
+      <div className="hero-video-wrap" aria-hidden="true">
+        <video
+          className="hero-video"
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster=""
+        >
+          <source src="/hero-washer.mp4" type="video/mp4" />
+        </video>
+      </div>
+
+      <div className="container" style={{ position: "relative", zIndex: 2 }}>
         <div className="hp-grid">
           <div style={{ position: "relative" }}>
             <span className="eyebrow on-dark">Crystals · since the neighborhood needed it</span>
@@ -73,19 +58,8 @@ export function Hero() {
               ))}
             </div>
           </div>
-          <div className="hp-right">
-            <div className="hp-note">drop &amp; go<ArrowRight size={18} /></div>
-            <div className="hero-photo">
-              <Image
-                src="https://images.unsplash.com/photo-1775210727648-9456f74dee90?w=1200&q=80&auto=format&fit=crop"
-                alt="Crystals laundromat interior"
-                fill
-                style={{ objectFit: "cover" }}
-                priority
-              />
-            </div>
-            <PhoneMock />
-          </div>
+          {/* Right column is now the video — no photo/phone mock needed */}
+          <div className="hp-right-spacer" />
         </div>
       </div>
     </section>
