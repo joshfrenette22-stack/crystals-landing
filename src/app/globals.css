@@ -284,18 +284,17 @@ p { margin: 0; font-size: var(--text-base); line-height: var(--lh-normal); color
   /* Mobile hero: video on top, text below */
   .hero-panel { padding: calc(var(--nav-height) + 20px) 0 48px; }
   /* Make video flow in-document above text on mobile */
-  .hero-panel { overflow: visible; }
   .hero-video-wrap {
     position: relative; inset: auto;
-    height: 65vw; margin-bottom: 28px;
+    height: 80vw; margin-bottom: 20px;
     overflow: visible;
   }
   .hero-video {
     position: absolute;
-    right: auto; left: 50%; top: 50%;
-    transform: translate(-50%, -50%);
-    width: 180vw; max-width: none; height: auto;
-    object-fit: none;
+    right: auto !important; left: 50% !important; top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 200vw !important; max-width: none !important; height: auto !important;
+    object-fit: cover !important;
     -webkit-mask-image:
       radial-gradient(ellipse 80% 75% at 50% 48%, #000 30%, rgba(0,0,0,0.4) 55%, transparent 75%);
     mask-image:
