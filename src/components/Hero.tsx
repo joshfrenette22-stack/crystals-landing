@@ -1,4 +1,8 @@
+"use client";
+import { useRef, useCallback } from "react";
 import { Truck, MapPin, Check } from "lucide-react";
+
+const SPIN_START = 3.25; // seconds — where the steady spin cycle begins
 
 function Bubbles() {
   const specs: [number, number, string, string][] = [
@@ -19,19 +23,27 @@ function Bubbles() {
 }
 
 export function Hero() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const handleEnded = useCallback(() => {
+    const v = videoRef.current;
+    if (!v) return;
+    v.currentTime = SPIN_START;
+    v.play();
+  }, []);
+
   return (
     <section className="hero-panel" id="top">
       <Bubbles />
 
-      {/* Video background — right side, blended into navy */}
       <div className="hero-video-wrap" aria-hidden="true">
         <video
+          ref={videoRef}
           className="hero-video"
           autoPlay
-          loop
           muted
           playsInline
-          poster=""
+          onEnded={handleEnded}
         >
           <source src="/hero-washer.mp4" type="video/mp4" />
         </video>
@@ -58,7 +70,6 @@ export function Hero() {
               ))}
             </div>
           </div>
-          {/* Right column is now the video — no photo/phone mock needed */}
           <div className="hp-right-spacer" />
         </div>
       </div>
