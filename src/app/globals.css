@@ -429,6 +429,7 @@ p { margin: 0; font-size: var(--text-base); line-height: var(--lh-normal); color
   background: #fff;
   padding: 64px 0 96px;
   overflow: hidden;
+  border-top: 1px solid var(--border-subtle);
 }
 .fold-layout {
   display: grid;
