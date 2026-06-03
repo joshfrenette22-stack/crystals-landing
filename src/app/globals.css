@@ -353,13 +353,17 @@ p { margin: 0; font-size: var(--text-base); line-height: var(--lh-normal); color
   background: transparent;
 }
 .ba-layer img {
-  width: 62%; height: auto;
+  width: 92%; height: auto;
   object-fit: contain;
   pointer-events: none;
   -webkit-mask-image:
-    radial-gradient(ellipse 75% 70% at 50% 50%, #000 40%, rgba(0,0,0,0.6) 60%, transparent 80%);
+    linear-gradient(to right, transparent 0%, #000 10%, #000 90%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, #000 12%, #000 85%, transparent 100%);
+  -webkit-mask-composite: destination-in;
   mask-image:
-    radial-gradient(ellipse 75% 70% at 50% 50%, #000 40%, rgba(0,0,0,0.6) 60%, transparent 80%);
+    linear-gradient(to right, transparent 0%, #000 10%, #000 90%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, #000 12%, #000 85%, transparent 100%);
+  mask-composite: intersect;
 }
 .ba-label {
   position: absolute; bottom: 18px;
@@ -407,11 +411,11 @@ p { margin: 0; font-size: var(--text-base); line-height: var(--lh-normal); color
   .ba-header { text-align: center; margin-left: auto; margin-right: auto; }
   .ba-header p { margin-left: auto; margin-right: auto; }
   .ba-comp { max-width: 100%; aspect-ratio: 4 / 3; }
-  .ba-layer img { width: 72%; }
+  .ba-layer img { width: 95%; }
 }
 @media (max-width: 520px) {
   .ba-comp { aspect-ratio: 1 / 1; }
-  .ba-layer img { width: 82%; }
+  .ba-layer img { width: 98%; }
   .ba-label { font-size: 10px; padding: 5px 10px; bottom: 12px; }
 }
 
